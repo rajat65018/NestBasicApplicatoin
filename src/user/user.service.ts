@@ -20,5 +20,9 @@ export class UserService {
         return 'Data updated successfully';
     }
 
+    async findOneUser(searchQuery) {
+        const userData = await this.userModel.findOne(searchQuery).lean();
+        return userData;
+    }
 
 }
